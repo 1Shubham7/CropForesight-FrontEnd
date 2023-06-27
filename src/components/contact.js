@@ -4,6 +4,7 @@ import './nav.css'
 import logo from '../assets/earth.png';
 import { useNavigate ,Link, useHref} from 'react-router-dom';
 import swal from 'sweetalert';
+import NAVBAR from './nav';
 
 const Typewriter = ({ sentences, delay }) => {
   const [displayText, setDisplayText] = useState('');
@@ -114,24 +115,7 @@ const Contact = () => {
   return (
     <div>
       {/* nav bar */}
-      <div className='nav'>
-      <header>
-
-        <nav>
-          <div class="left" style={{color: "red"}}>
-        <Link to="/"><img src = {logo}/></Link>
-        </div>
-            <div class="right">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact" >Contact</Link></li>
-                    <li><Link to="/Weather">Weather</Link></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-      </div>
+      <NAVBAR />
       <h1 className="contact">Contact US</h1>
 
           <h3 className="tag"><Typewriter sentences={sentences} delay={2000} /></h3>
@@ -232,7 +216,7 @@ const Contact = () => {
               ) 
             }
             </div>
-            <button className="btn ac_btn" type="submit"  onClick={handleSubmit} >
+            <button className="btn ac_btn" type="submit" >
               Send
             </button>
           </form>

@@ -4,6 +4,10 @@ import './nav.css'
 import logo from '../assets/earth.png';
 import aboutPic from '../assets/about.png';
 import { useNavigate, Link } from 'react-router-dom';
+import Review from "./Review";
+import NAVBAR from './nav';
+
+
 
 
 const About = () => {
@@ -16,28 +20,10 @@ const About = () => {
     return (
         <>
             {/* nav bar */}
-            <div className='nav'>
-                <header>
-                    <nav>
-                        <div class="left" style={{ color: "red" }}>
-                            <Link to="/"><img src={logo} /></Link>
-                        </div>
-                        <div class="right">
-                            <ul>
-                                <li><Link to="/">Home</Link></li>
-                                <li><Link to="/about">About</Link></li>
-                                <li><Link to="/contact" >Contact</Link></li>
-                                <li><Link to="/Weather">Weather</Link></li>
-
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-            </div>
-
+            <NAVBAR />
             {/* main section */}
             <div className="aboutMain">
-                <h1 className="about"> What Is CropForesight❓ </h1>
+                <h1 className="about"> What Is CropForesight❔ </h1>
                 <div className="content">
                     <div className="left">
                         <p>CropForesight is a powerful crop recommendation website that helps farmers and agriculture enthusiasts make informed decisions about the best crop to cultivate on a given land.<br />
@@ -62,6 +48,15 @@ const About = () => {
                     </div>
                 </div>
             </div>
+            <main>
+      <section className="container">
+        <div className="title">
+          <h2>Our Testimonials</h2>
+          <div className="underline"></div>
+        </div>
+        <Review/>
+      </section>
+    </main>
         </>
     );
 };
